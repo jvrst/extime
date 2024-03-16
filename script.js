@@ -11,16 +11,17 @@ const stockExchanges = [
   { name: 'New York Stock Exchange', short_name: "NYSE", openHour: 13, openMinute: 30, closeHour: 20, closeMinute: 0, yIndex: 0 },
   { name: 'NASDAQ', short_name: "NDQ", openHour: 13, openMinute: 30, closeHour: 20, closeMinute: 0, yIndex: 1 },
   { name: 'London Stock Exchange', short_name: "LSE", openHour: 8, openMinute: 0, closeHour: 16, closeMinute: 30, yIndex: 2 },
-  { name: 'Tokyo Stock Exchange', short_name: "TSE", openHour: 0, openMinute: 0, closeHour: 6, closeMinute: 0, yIndex: 3 },
-  { name: 'Hong Kong Stock Exchange', short_name: "HKEX", openHour: 0, openMinute: 0, closeHour: 6, closeMinute: 0, yIndex: 4 },
+  { name: 'Tokyo Stock Exchange', short_name: "TSE", openHour: 12, openMinute: 0, closeHour: 18, closeMinute: 0, yIndex: 3 },
+  { name: 'Hong Kong Stock Exchange', short_name: "HKEX", openHour: 1, openMinute: 15, closeHour: 8, closeMinute: 0, yIndex: 4 },
   { name: 'Euronext', short_name: "EN", openHour: 8, openMinute: 0, closeHour: 16, closeMinute: 40, yIndex: 5 },
-  { name: 'Toronto Stock Exchange', short_name: "TSX", openHour: 0, openMinute: 0, closeHour: 6, closeMinute: 0, yIndex: 5 }
+  { name: 'Toronto Stock Exchange', short_name: "TSX", openHour: 1, openMinute: 30, closeHour: 9, closeMinute: 0, yIndex: 5 }
 ];
 
 let state = 'Open'
 if (currentDay === 6 || currentDay === 0) {
   state = 'Closed'
 }
+
 // Map stock exchanges to series data
 let seriesData = stockExchanges.map(exchange => ({
   x: new Date().setUTCHours(exchange.openHour, exchange.openMinute, 0, 0),
@@ -28,14 +29,6 @@ let seriesData = stockExchanges.map(exchange => ({
   y: exchange.yIndex,
   name: state
 }));
-
-// // Saturday
-// seriesData = stockExchanges.map(exchange => ({
-// x: 0,
-// x2: 0,
-// y: exchange.yIndex,
-// name: 'Open'
-// }));
 
 Highcharts.chart('container', {
   chart: {
