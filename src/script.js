@@ -14,7 +14,7 @@ const stockExchanges = [
   { name: 'Tokyo Stock Exchange', short_name: "TSE", openHour: 12, openMinute: 0, closeHour: 18, closeMinute: 0, yIndex: 3 },
   { name: 'Hong Kong Stock Exchange', short_name: "HKEX", openHour: 1, openMinute: 15, closeHour: 8, closeMinute: 0, yIndex: 4 },
   { name: 'Euronext', short_name: "EN", openHour: 8, openMinute: 0, closeHour: 16, closeMinute: 40, yIndex: 5 },
-  { name: 'Toronto Stock Exchange', short_name: "TSX", openHour: 1, openMinute: 30, closeHour: 9, closeMinute: 0, yIndex: 5 }
+  { name: 'Toronto Stock Exchange', short_name: "TSX", openHour: 1, openMinute: 30, closeHour: 9, closeMinute: 0, yIndex: 6 }
 ];
 
 let state = 'Open'
